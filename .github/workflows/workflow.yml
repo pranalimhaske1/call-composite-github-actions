@@ -1,0 +1,15 @@
+name: Workflow Reporter Example
+
+on:
+  workflow_dispatch:   # manually triggered
+  push:                # also runs on push
+
+jobs:
+  report:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Call global workflow reporter action
+        uses: hemantbhosale916/github-custom-actions/.github/actions/my-action@main
